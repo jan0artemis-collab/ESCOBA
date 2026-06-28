@@ -73,7 +73,7 @@
                         <button @click="open = !open" class="text-gray-600 hover:text-accent font-medium transition flex items-center gap-2 px-3 py-2 rounded-md">
                             Menu <i class="fas fa-chevron-down text-sm"></i>
                         </button>
-                        <div x-show="open" @click.away="open = false" x-transition class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-44 bg-white rounded-xl shadow-lg py-2 z-50 sm:left-auto sm:translate-x-0 sm:right-0">
+                        <div x-show="open" @click.away="open = false" x-transition class="absolute left-4 right-4 mt-2 bg-white rounded-xl shadow-lg py-2 z-50 sm:left-auto sm:right-0 sm:w-44">
                             <a href="#program" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Program</a>
                             <a href="#filosofi" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Filosofi</a>
                             <a href="#aktivitas" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Aktivitas</a>
