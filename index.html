@@ -58,13 +58,13 @@
     <div class="blob bg-secondary w-96 h-96 rounded-full bottom-0 left-1/4"></div>
 
     <nav class="fixed w-full z-50 glass-card transition-all duration-300" x-data="{ navOpen: false }" @keydown.escape.window="navOpen = false">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 min-w-0">
                     <img src="assets/logo.jpg" alt="SMP Cokroaminoto" class="w-12 h-12 rounded-full object-cover">
-                    <div class="leading-none">
-                        <div class="font-poppins font-bold text-lg text-darktext">SMP Cokroaminoto</div>
-                        <div class="text-sm text-darktext">Banjarnegara</div>
+                    <div class="leading-none min-w-0">
+                        <div class="font-poppins font-bold text-lg text-darktext truncate">SMP Cokroaminoto</div>
+                        <div class="text-sm text-darktext truncate">Banjarnegara</div>
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@
             </div>
 
             <!-- Mobile menu -->
-            <div x-show="navOpen" x-cloak @click.away="navOpen = false" x-transition class="sm:hidden mt-2 bg-white rounded-xl shadow-lg p-4">
+            <div x-show="navOpen" x-cloak @click.away="navOpen = false" x-transition class="sm:hidden mt-2 bg-white rounded-xl shadow-lg p-4 absolute left-4 right-4 z-50">
                 <a href="#program" class="block px-4 py-3 text-gray-700 rounded-md">Program</a>
                 <a href="#filosofi" class="block px-4 py-3 text-gray-700 rounded-md">Filosofi</a>
                 <a href="#aktivitas" class="block px-4 py-3 text-gray-700 rounded-md">Aktivitas</a>
