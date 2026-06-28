@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Pembentukan Karakter Berbasis Tahu Diri | SMP Cokroaminoto Banjarnegara</title>
+    <meta name="description" content="Program inovatif yang membantu siswa mengenal diri, menemukan bakat, membangun karakter, dan menentukan masa depan melalui pendampingan selama tiga tahun.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B8E986',
+                        secondary: '#FFD54F',
+                        accent: '#8E7DF5',
+                        bglight: '#F9FFF8',
+                        darktext: '#2E2E2E',
+                        success: '#4CAF50'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'glow': '0 0 20px rgba(184, 233, 134, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #2E2E2E; background-color: #F9FFF8; overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        .gradient-text { background: linear-gradient(to right, #8E7DF5, #4CAF50); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .blob { position: absolute; filter: blur(80px); z-index: -1; opacity: 0.4; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="blob bg-primary w-96 h-96 rounded-full top-0 left-0"></div>
+    <div class="blob bg-accent w-96 h-96 rounded-full top-1/4 right-0"></div>
+    <div class="blob bg-secondary w-96 h-96 rounded-full bottom-0 left-1/4"></div>
+
+    <nav class="fixed w-full z-50 glass-card transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-xl">C</div>
+                    <span class="font-poppins font-bold text-xl text-darktext tracking-tight">SMP Cokroaminoto</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#program" class="text-gray-600 hover:text-accent font-medium transition">Program</a>
+                    <a href="#filosofi" class="text-gray-600 hover:text-accent font-medium transition">Filosofi</a>
+                    <a href="#aktivitas" class="text-gray-600 hover:text-accent font-medium transition">Aktivitas</a>
+                    <a href="#faq" class="text-gray-600 hover:text-accent font-medium transition">FAQ</a>
+                </div>
+                <div>
+                    <a href="#daftar" class="bg-accent hover:bg-opacity-90 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-soft transform hover:scale-105">Daftar SPMB</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+                <div class="inline-block bg-white px-4 py-1.5 rounded-full shadow-sm text-sm font-semibold text-accent mb-6 border border-accent/20">
+                    ✨ Program Pembentukan Karakter Berbasis Tahu Diri
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-darktext leading-tight mb-6 tracking-tight">
+                    Setiap Anak <span class="gradient-text">Istimewa</span>.
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mb-4">
+                    Yang Mereka Butuhkan Bukan Dipaksa Sama, <br/>Tetapi Dibantu Menemukan Dirinya.
+                </h2>
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Program pembentukan karakter selama tiga tahun yang membantu siswa mengenal dirinya, menemukan bakat, mengembangkan potensi, dan menentukan arah pendidikan dengan percaya diri.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#daftar" class="bg-darktext hover:bg-gray-800 text-white px-8 py-4 rounded-full font-semibold transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-lg flex items-center justify-center gap-2">
+                        Pelajari Program <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#solusi" class="bg-white hover:bg-gray-50 text-darktext border border-gray-200 px-8 py-4 rounded-full font-semibold transition-all shadow-sm text-lg flex items-center justify-center gap-2">
+                        Lihat Perjalanan Siswa <i class="fas fa-play-circle text-accent"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-20 relative mx-auto w-full max-w-5xl h-96 glass-card rounded-3xl shadow-2xl overflow-hidden flex items-center justify-center border-4 border-white" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/20"></div>
+                <div class="text-center z-10 p-8">
+                    <i class="fas fa-tree text-6xl text-success mb-4 animate-bounce"></i>
+                    <h3 class="text-2xl font-bold text-darktext">Pohon Profesi & Potensi</h3>
+                    <p class="text-gray-500 mt-2">[Tempatkan Ilustrasi Anak Tersenyum & Pohon Profesi di Sini]</p>
+                    <div class="flex flex-wrap justify-center gap-3 mt-4">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm font-medium text-accent shadow-sm">Dokter</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm font-medium text-blue-500 shadow-sm">Programmer</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm font-medium text-orange-500 shadow-sm">Desainer</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm font-medium text-green-600 shadow-sm">Petani Modern</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm font-medium text-red-500 shadow-sm">AI Engineer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white" id="masalah">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-darktext mb-4">Mengapa Banyak Anak Bingung Setelah Lulus SMP?</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-8 rounded-3xl shadow-soft hover:-translate-y-2 transition-transform duration-300 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl mb-4">😔</div>
+                    <h3 class="text-xl font-bold mb-2">Tidak Mengenal Bakat</h3>
+                    <p class="text-gray-500 text-sm">Lulus tanpa tahu apa kekuatan dan kelebihan yang mereka miliki.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl shadow-soft hover:-translate-y-2 transition-transform duration-300 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold mb-2">Sibuk dengan Gadget</h3>
+                    <p class="text-gray-500 text-sm">Kehilangan fokus pada dunia nyata dan terjebak konsumsi konten pasif.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl shadow-soft hover:-translate-y-2 transition-transform duration-300 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl mb-4">😟</div>
+                    <h3 class="text-xl font-bold mb-2">Ikut Teman</h3>
+                    <p class="text-gray-500 text-sm">Memilih sekolah lanjutan hanya karena takut terpisah dari lingkungan lama.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl shadow-soft hover:-translate-y-2 transition-transform duration-300 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-5xl mb-4">❓</div>
+                    <h3 class="text-xl font-bold mb-2">Tanpa Tujuan Hidup</h3>
+                    <p class="text-gray-500 text-sm">Menjalani pendidikan bagai rutinitas tanpa target masa depan yang jelas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-bglight relative" id="program">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-darktext mb-4">Filosofi Program 3 Tahun</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kami merancang peta jalan yang jelas untuk setiap fase pertumbuhan karakter anak Anda.</p>
+            </div>
+
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 rounded-full"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-primary relative transform transition hover:scale-105" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold absolute -top-8 left-1/2 -translate-x-1/2 shadow-glow">VII</div>
+                        <h3 class="text-2xl font-bold text-center mt-6 mb-2">Siapa Aku?</h3>
+                        <p class="text-primary font-semibold text-center mb-4">Fase Pengenalan Diri</p>
+                        <ul class="text-gray-600 space-y-3 text-sm">
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i> Eksplorasi Minat Dasar</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i> Pembangunan Kedisiplinan</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i> Adaptasi Lingkungan</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-secondary relative transform transition hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center text-2xl font-bold absolute -top-8 left-1/2 -translate-x-1/2 shadow-lg">VIII</div>
+                        <h3 class="text-2xl font-bold text-center mt-6 mb-2">Aku Bisa Apa?</h3>
+                        <p class="text-secondary font-semibold text-center mb-4">Fase Pengembangan Potensi</p>
+                        <ul class="text-gray-600 space-y-3 text-sm">
+                            <li><i class="fas fa-check-circle text-secondary mr-2"></i> Penajaman Bakat Spesifik</li>
+                            <li><i class="fas fa-check-circle text-secondary mr-2"></i> Proyek Kolaborasi</li>
+                            <li><i class="fas fa-check-circle text-secondary mr-2"></i> Uji Coba Kepemimpinan</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-accent relative transform transition hover:scale-105" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold absolute -top-8 left-1/2 -translate-x-1/2 shadow-lg">IX</div>
+                        <h3 class="text-2xl font-bold text-center mt-6 mb-2">Aku Akan Menjadi Apa?</h3>
+                        <p class="text-accent font-semibold text-center mb-4">Fase Penentuan Masa Depan</p>
+                        <ul class="text-gray-600 space-y-3 text-sm">
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> Penyusunan Portofolio</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> Pemetaan Karir & Studi</li>
+                            <li><i class="fas fa-check-circle text-accent mr-2"></i> Pematangan Karakter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-darktext mb-4">7 Pilar Karakter</h2>
+                <p class="text-gray-600">Pondasi utama yang kami tanamkan pada setiap peserta didik.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto" data-aos="fade-up">
+                <div class="px-6 py-4 bg-primary/10 text-primary font-bold rounded-full border border-primary/20 hover:bg-primary hover:text-white transition cursor-pointer">Tahu Diri</div>
+                <div class="px-6 py-4 bg-gray-50 font-semibold rounded-full border hover:border-accent hover:text-accent transition cursor-pointer">Integritas</div>
+                <div class="px-6 py-4 bg-gray-50 font-semibold rounded-full border hover:border-accent hover:text-accent transition cursor-pointer">Empati</div>
+                <div class="px-6 py-4 bg-gray-50 font-semibold rounded-full border hover:border-accent hover:text-accent transition cursor-pointer">Disiplin</div>
+                <div class="px-6 py-4 bg-gray-50 font-semibold rounded-full border hover:border-accent hover:text-accent transition cursor-pointer">Komunikasi</div>
+                <div class="px-6 py-4 bg-gray-50 font-semibold rounded-full border hover:border-accent hover:text-accent transition cursor-pointer">Kepemimpinan</div>
+                <div class="px-6 py-4 bg-gray-50 font-semibold rounded-full border hover:border-accent hover:text-accent transition cursor-pointer">Tanggung Jawab</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-darktext text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Wadah Beragam Minat & Bakat</h2>
+                <p class="text-gray-400">Kami menyediakan ekosistem untuk berbagai jenis kecerdasan.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in">
+                    <i class="fas fa-code text-3xl mb-3 text-primary"></i><h4 class="font-medium text-sm">Coding</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fas fa-robot text-3xl mb-3 text-secondary"></i><h4 class="font-medium text-sm">Robotik</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-microphone text-3xl mb-3 text-purple-400"></i><h4 class="font-medium text-sm">Public Speaking</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-basketball-ball text-3xl mb-3 text-orange-400"></i><h4 class="font-medium text-sm">Olahraga</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-music text-3xl mb-3 text-pink-400"></i><h4 class="font-medium text-sm">Musik</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fas fa-palette text-3xl mb-3 text-yellow-400"></i><h4 class="font-medium text-sm">Seni</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-pen-nib text-3xl mb-3 text-blue-400"></i><h4 class="font-medium text-sm">Desain</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="350">
+                    <i class="fas fa-store text-3xl mb-3 text-green-400"></i><h4 class="font-medium text-sm">Wirausaha</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-book-open text-3xl mb-3 text-indigo-400"></i><h4 class="font-medium text-sm">Literasi</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="450">
+                    <i class="fas fa-mosque text-3xl mb-3 text-teal-400"></i><h4 class="font-medium text-sm">Keagamaan</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-brain text-3xl mb-3 text-red-400"></i><h4 class="font-medium text-sm">AI</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800 hover:bg-accent transition-colors duration-300" data-aos="zoom-in" data-aos-delay="550">
+                    <i class="fas fa-flask text-3xl mb-3 text-cyan-400"></i><h4 class="font-medium text-sm">STEM</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-bglight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-darktext mb-12" data-aos="fade-up">Kolaborasi Adalah Kunci</h2>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16" data-aos="fade-up">
+                <div class="glass-card p-8 rounded-3xl flex-1 text-center border-t-4 border-accent shadow-soft">
+                    <i class="fas fa-school text-5xl text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Sekolah</h3>
+                    <p class="text-gray-600">Fasilitator, Mentor, dan Penunjuk Arah.</p>
+                </div>
+                
+                <div class="text-4xl text-gray-300 hidden md:block">
+                    <i class="fas fa-handshake animate-pulse text-secondary"></i>
+                </div>
+                <div class="text-4xl text-gray-300 md:hidden py-4">
+                    <i class="fas fa-handshake text-secondary"></i>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl flex-1 text-center border-t-4 border-secondary shadow-soft">
+                    <i class="fas fa-user-friends text-5xl text-secondary mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Orang Tua</h3>
+                    <p class="text-gray-600">Pendukung, Motivator, dan Ruang Aman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-darktext mb-4">Lulus Membawa Lebih Dari Sekadar Ijazah</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm flex items-start gap-4" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fas fa-id-card"></i></div>
+                    <div><h4 class="font-bold text-lg mb-1">Profil Karakter</h4><p class="text-sm text-gray-500">Laporan kepribadian dan kebiasaan positif siswa.</p></div>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm flex items-start gap-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-accent/20 text-accent rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fas fa-folder-open"></i></div>
+                    <div><h4 class="font-bold text-lg mb-1">Portofolio Karya</h4><p class="text-sm text-gray-500">Kumpulan proyek dan karya selama 3 tahun.</p></div>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-secondary/20 text-yellow-600 rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fas fa-map-marked-alt"></i></div>
+                    <div><h4 class="font-bold text-lg mb-1">Peta Potensi</h4><p class="text-sm text-gray-500">Pemetaan kekuatan akademis dan non-akademis.</p></div>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm flex items-start gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fas fa-route"></i></div>
+                    <div><h4 class="font-bold text-lg mb-1">Roadmap Pendidikan</h4><p class="text-sm text-gray-500">Rekomendasi jurusan SMA/SMK yang tepat.</p></div>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm flex items-start gap-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fas fa-trophy"></i></div>
+                    <div><h4 class="font-bold text-lg mb-1">Sertifikat Prestasi</h4><p class="text-sm text-gray-500">Bukti partisipasi dan pencapaian kompetisi.</p></div>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm flex items-start gap-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fas fa-bullseye"></i></div>
+                    <div><h4 class="font-bold text-lg mb-1">Target Hidup</h4><p class="text-sm text-gray-500">Visi personal yang ditulis sendiri oleh siswa.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-bglight" id="faq" x-data="{ activeAccordion: null }">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-darktext">Pertanyaan Seputar SPMB</h2>
+            </div>
+            
+            <div class="space-y-4" data-aos="fade-up">
+                <div class="glass-card rounded-2xl border border-gray-200 overflow-hidden">
+                    <button @click="activeAccordion = activeAccordion === 1 ? null : 1" class="w-full px-6 py-4 text-left font-semibold text-lg flex justify-between items-center focus:outline-none">
+                        Kapan pendaftaran SPMB dibuka?
+                        <i class="fas fa-chevron-down transition-transform duration-300" :class="activeAccordion === 1 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="activeAccordion === 1" x-collapse x-cloak class="px-6 pb-4 text-gray-600">
+                        Pendaftaran gelombang pertama dibuka mulai bulan ini hingga kuota terpenuhi. Silakan klik tombol "Daftar SPMB" untuk informasi gelombang saat ini.
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl border border-gray-200 overflow-hidden">
+                    <button @click="activeAccordion = activeAccordion === 2 ? null : 2" class="w-full px-6 py-4 text-left font-semibold text-lg flex justify-between items-center focus:outline-none">
+                        Apakah ada tes seleksi akademis?
+                        <i class="fas fa-chevron-down transition-transform duration-300" :class="activeAccordion === 2 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="activeAccordion === 2" x-collapse x-cloak class="px-6 pb-4 text-gray-600">
+                        Fokus kami adalah observasi karakter dan minat bakat. Wawancara orang tua dan calon siswa lebih diutamakan dibandingkan tes akademis murni.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl border border-gray-200 overflow-hidden">
+                    <button @click="activeAccordion = activeAccordion === 3 ? null : 3" class="w-full px-6 py-4 text-left font-semibold text-lg flex justify-between items-center focus:outline-none">
+                        Bagaimana jika anak saya belum tahu minatnya?
+                        <i class="fas fa-chevron-down transition-transform duration-300" :class="activeAccordion === 3 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="activeAccordion === 3" x-collapse x-cloak class="px-6 pb-4 text-gray-600">
+                        Justru di sinilah peran program kami. Di Kelas VII (Fase "Siapa Aku?"), anak akan diekspos pada berbagai aktivitas untuk membantu mereka menemukan minat terpendamnya.
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl border border-gray-200 overflow-hidden">
+                    <button @click="activeAccordion = activeAccordion === 4 ? null : 4" class="w-full px-6 py-4 text-left font-semibold text-lg flex justify-between items-center focus:outline-none">
+                        Di mana lokasi sekolah?
+                        <i class="fas fa-chevron-down transition-transform duration-300" :class="activeAccordion === 4 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="activeAccordion === 4" x-collapse x-cloak class="px-6 pb-4 text-gray-600">
+                        Sekolah kami berlokasi di Sayangan, Desa Twelagiri, RT 04/ RW 04, Kec. Pagedongan, Kabupaten Banjarnegara. Anda bisa mengecek tautan Google Maps di bagian bawah halaman ini.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gradient-to-br from-accent to-blue-600 text-white text-center relative overflow-hidden" id="daftar">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Masa Depan Tidak Dimulai Setelah Lulus.</h2>
+            <p class="text-xl md:text-2xl mb-10 font-light text-blue-100">Masa Depan Dibangun Sejak Hari Pertama Anak Masuk Sekolah.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-primary text-darktext hover:bg-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg transform hover:-translate-y-1">
+                    Daftar Sekarang
+                </button>
+                <button class="bg-transparent border-2 border-white hover:bg-white hover:text-accent px-8 py-4 rounded-full font-bold text-lg transition-all">
+                    Unduh Profil Program
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t-4 border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-darktext font-bold text-xl">C</div>
+                        <h3 class="font-poppins font-bold text-xl text-white">SMP Cokroaminoto<br><span class="text-sm font-normal text-gray-400">Banjarnegara</span></h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Dinaungi oleh:</p>
+                    <p class="font-semibold text-primary">Yayasan Pendidikan Islam Cokroaminoto Banjarnegara</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 font-poppins">Alamat Kami</h4>
+                    <p class="text-sm leading-relaxed mb-4">
+                        <i class="fas fa-map-marker-alt text-accent mr-2"></i> 
+                        Sayangan, Desa Twelagiri, RT 04/ RW 04,<br>
+                        Kecamatan Pagedongan,<br>
+                        Kabupaten Banjarnegara
+                    </p>
+                    <a href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwjQjPnKxamVAxUAAAAAHQAAAAAQYA..i&pvq=Cg0vZy8xMWg1MnJyZDJ0&fvr=1&cs=0&um=1&ie=UTF-8&fb=1&gl=id&sa=X&ftid=0x2e7aa971ee12a6d7:0xb944bcd9e6f3ec5dq1" target="_blank" class="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white text-sm py-2 px-4 rounded-lg transition border border-gray-700 hover:border-accent">
+                        <i class="fas fa-location-arrow text-primary"></i> Buka di Google Maps
+                    </a>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 font-poppins">Kontak</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fab fa-whatsapp text-green-400 mr-2"></i> +62 8XX-XXXX-XXXX</li>
+                        <li><i class="fas fa-envelope text-blue-400 mr-2"></i> info@smpcokroaminoto.sch.id</li>
+                        <li><i class="fab fa-instagram text-pink-400 mr-2"></i> @smpcokroaminoto_bna</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 SMP Cokroaminoto Banjarnegara. Hak Cipta Dilindungi.</p>
+                <p class="mt-2 md:mt-0 text-gray-500">Program Pembentukan Karakter Berbasis Tahu Diri</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Animasi hanya berjalan sekali saat scroll ke bawah
+            offset: 50, // Trigger animasi sedikit lebih awal
+        });
+    </script>
+</body>
+</html>
