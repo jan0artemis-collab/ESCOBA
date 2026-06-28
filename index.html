@@ -59,18 +59,14 @@
 
     <nav class="fixed w-full z-50 glass-card transition-all duration-300" x-data="{ navOpen: false }" @keydown.escape.window="navOpen = false">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-3 min-w-0">
+            <div class="flex items-center justify-between py-3">
+                <div class="flex items-start gap-3 min-w-0">
                     <img src="assets/logo.jpg" alt="SMP Cokroaminoto" class="w-12 h-12 rounded-full object-cover">
                     <div class="leading-none min-w-0">
                         <div class="font-poppins font-bold text-lg text-darktext truncate">SMP Cokroaminoto</div>
                         <div class="text-sm text-darktext truncate">Banjarnegara</div>
+                        <a href="#daftar" class="mt-2 inline-block bg-accent hover:bg-opacity-90 text-white px-4 py-1.5 rounded-full font-semibold transition-all shadow-soft text-sm">Daftar</a>
                     </div>
-                </div>
-
-                <div class="hidden sm:flex items-center gap-3">
-                    
-                    <a href="#daftar" class="bg-accent hover:bg-opacity-90 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-soft ml-4">Daftar</a>
                 </div>
 
                 <div class="sm:hidden flex items-center">
