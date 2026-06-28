@@ -51,7 +51,7 @@
         [x-cloak] { display: none !important; }
     </style>
 </head>
-<body x-data="{ fullscreenSrc: null }" class="antialiased">
+<body x-data="{ fullscreenSrc: null }" @open-fullscreen.window="fullscreenSrc = $event.detail" class="antialiased">
 
     <div class="blob bg-primary w-96 h-96 rounded-full top-0 left-0"></div>
     <div class="blob bg-accent w-96 h-96 rounded-full top-1/4 right-0"></div>
@@ -64,7 +64,7 @@
                     <img src="assets/logo.jpg" alt="SMP Cokroaminoto" class="w-12 h-12 rounded-full object-cover">
                     <div>
                         <div class="font-poppins font-bold text-lg text-darktext">SMP Cokroaminoto</div>
-                        <div class="text-sm text-gray-600">Banjarnegara</div>
+                        <div class="font-poppins font-bold text-lg text-darktext">Banjarnegara</div>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
                         <button @click="open = !open" class="text-gray-600 hover:text-accent font-medium transition flex items-center gap-2 px-3 py-2 rounded-md">
                             Menu <i class="fas fa-chevron-down text-sm"></i>
                         </button>
-                        <div x-show="open" @click.away="open = false" x-transition class="absolute right-0 mt-2 w-44 bg-white rounded-xl shadow-lg py-2 z-50">
+                        <div x-show="open" @click.away="open = false" x-transition class="absolute left-1/2 transform -translate-x-1/2 mt-2 w-44 bg-white rounded-xl shadow-lg py-2 z-50 sm:left-auto sm:translate-x-0 sm:right-0">
                             <a href="#program" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Program</a>
                             <a href="#filosofi" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Filosofi</a>
                             <a href="#aktivitas" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Aktivitas</a>
@@ -133,6 +133,23 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var imgs = document.querySelectorAll('img');
+            imgs.forEach(function (img) {
+                try {
+                    var src = img.getAttribute('src') || '';
+                    if (/fler\.jpg$/i.test(src)) {
+                        img.style.cursor = 'pointer';
+                        img.addEventListener('click', function () {
+                            window.dispatchEvent(new CustomEvent('open-fullscreen', { detail: src }));
+                        });
+                    }
+                } catch (e) { /* ignore */ }
+            });
+        });
+    </script>
 
     <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
