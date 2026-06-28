@@ -57,7 +57,7 @@
     <div class="blob bg-accent w-96 h-96 rounded-full top-1/4 right-0"></div>
     <div class="blob bg-secondary w-96 h-96 rounded-full bottom-0 left-1/4"></div>
 
-    <nav class="fixed w-full z-50 glass-card transition-all duration-300" x-data="{ navOpen: false }" @keydown.escape.window="navOpen = false">
+    <nav class="fixed w-full z-50 glass-card transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="flex items-center justify-between py-3">
                 <div class="flex items-start gap-3 min-w-0">
@@ -69,11 +69,7 @@
                     </div>
                 </div>
 
-                <div class="sm:hidden flex items-center">
-                    <button @click="navOpen = !navOpen" class="p-2 rounded-md text-gray-600 hover:text-accent focus:outline-none">
-                        <i x-bind:class="navOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
-                    </button>
-                </div>
+                
             </div>
 
             
