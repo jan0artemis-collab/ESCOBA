@@ -57,27 +57,36 @@
     <div class="blob bg-accent w-96 h-96 rounded-full top-1/4 right-0"></div>
     <div class="blob bg-secondary w-96 h-96 rounded-full bottom-0 left-1/4"></div>
 
-    <nav class="fixed w-full z-50 glass-card transition-all duration-300">
+    <nav class="fixed w-full z-50 glass-card transition-all duration-300" x-data="{ navOpen: false }" @keydown.escape.window="navOpen = false">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col">
-                <div class="flex items-center gap-3 py-3">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
                     <img src="assets/logo.jpg" alt="SMP Cokroaminoto" class="w-12 h-12 rounded-full object-cover">
-                    <div>
+                    <div class="leading-none">
                         <div class="font-poppins font-bold text-lg text-darktext">SMP Cokroaminoto</div>
-                        <div class="font-poppins font-bold text-lg text-darktext">Banjarnegara</div>
+                        <div class="text-sm text-darktext">Banjarnegara</div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-end gap-4 pb-3">
-                    <div class="flex items-center gap-3">
-                        <a href="#program" class="text-gray-600 hover:text-accent font-medium px-3 py-2 rounded-md">Program</a>
-                        <a href="#filosofi" class="text-gray-600 hover:text-accent font-medium px-3 py-2 rounded-md">Filosofi</a>
-                        <a href="#aktivitas" class="text-gray-600 hover:text-accent font-medium px-3 py-2 rounded-md">Aktivitas</a>
-                        <a href="#faq" class="text-gray-600 hover:text-accent font-medium px-3 py-2 rounded-md">FAQ</a>
-                    </div>
-
-                    <a href="#daftar" class="bg-accent hover:bg-opacity-90 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-soft">Daftar</a>
+                <div class="hidden sm:flex items-center gap-3">
+                    
+                    <a href="#daftar" class="bg-accent hover:bg-opacity-90 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-soft ml-4">Daftar</a>
                 </div>
+
+                <div class="sm:hidden flex items-center">
+                    <button @click="navOpen = !navOpen" class="p-2 rounded-md text-gray-600 hover:text-accent focus:outline-none">
+                        <i x-bind:class="navOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div x-show="navOpen" x-cloak @click.away="navOpen = false" x-transition class="sm:hidden mt-2 bg-white rounded-xl shadow-lg p-4">
+                <a href="#program" class="block px-4 py-3 text-gray-700 rounded-md">Program</a>
+                <a href="#filosofi" class="block px-4 py-3 text-gray-700 rounded-md">Filosofi</a>
+                <a href="#aktivitas" class="block px-4 py-3 text-gray-700 rounded-md">Aktivitas</a>
+                <a href="#faq" class="block px-4 py-3 text-gray-700 rounded-md">FAQ</a>
+                <a href="#daftar" class="block mt-3 w-full text-center bg-accent text-white px-4 py-3 rounded-full font-semibold">Daftar</a>
             </div>
         </div>
     </nav>
