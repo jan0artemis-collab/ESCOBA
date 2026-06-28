@@ -51,38 +51,47 @@
         [x-cloak] { display: none !important; }
     </style>
 </head>
-<body class="antialiased">
+<body x-data="{ fullscreenSrc: null }" class="antialiased">
 
     <div class="blob bg-primary w-96 h-96 rounded-full top-0 left-0"></div>
     <div class="blob bg-accent w-96 h-96 rounded-full top-1/4 right-0"></div>
     <div class="blob bg-secondary w-96 h-96 rounded-full bottom-0 left-1/4"></div>
 
-    <nav x-data="{navOpen:false}" class="fixed w-full z-50 glass-card transition-all duration-300">
+    <nav class="fixed w-full z-50 glass-card transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center gap-3">
-                    <img src="assets/logo.jpg" alt="SMP Cokroaminoto" class="w-10 h-10 rounded-full object-cover">
-                    <span class="font-poppins font-bold text-xl text-darktext tracking-tight">SMP Cokroaminoto Banjarnegara</span>
-                </div>
-
-                <div class="hidden md:block relative" x-data="{open:false}">
-                    <button @click="open = !open" class="text-gray-600 hover:text-accent font-medium transition flex items-center gap-2">
-                        Menu <i class="fas fa-chevron-down text-sm"></i>
-                    </button>
-                    <div x-show="open" @click.away="open = false" x-transition class="absolute right-0 mt-2 w-44 bg-white rounded-xl shadow-lg py-2 z-50">
-                        <a href="#program" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Program</a>
-                        <a href="#filosofi" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Filosofi</a>
-                        <a href="#aktivitas" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Aktivitas</a>
-                        <a href="#faq" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">FAQ</a>
+            <div class="flex flex-col">
+                <div class="flex items-center gap-3 py-3">
+                    <img src="assets/logo.jpg" alt="SMP Cokroaminoto" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <div class="font-poppins font-bold text-lg text-darktext">SMP Cokroaminoto</div>
+                        <div class="text-sm text-gray-600">Banjarnegara</div>
                     </div>
                 </div>
 
-                <div>
-                    <a href="#daftar" class="bg-accent hover:bg-opacity-90 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-soft transform hover:scale-105">Daftar</a>
+                <div class="flex items-center justify-end gap-4 pb-3">
+                    <div class="relative" x-data="{open:false}">
+                        <button @click="open = !open" class="text-gray-600 hover:text-accent font-medium transition flex items-center gap-2 px-3 py-2 rounded-md">
+                            Menu <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div x-show="open" @click.away="open = false" x-transition class="absolute right-0 mt-2 w-44 bg-white rounded-xl shadow-lg py-2 z-50">
+                            <a href="#program" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Program</a>
+                            <a href="#filosofi" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Filosofi</a>
+                            <a href="#aktivitas" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Aktivitas</a>
+                            <a href="#faq" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">FAQ</a>
+                        </div>
+                    </div>
+
+                    <a href="#daftar" class="bg-accent hover:bg-opacity-90 text-white px-5 py-2 rounded-full font-semibold transition-all shadow-soft">Daftar</a>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Generic fullscreen modal for any image -->
+    <div x-show="fullscreenSrc" x-cloak @click.away="fullscreenSrc = null" x-transition.opacity class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4" @keydown.escape.window="fullscreenSrc = null">
+        <button @click="fullscreenSrc = null" class="absolute top-6 right-6 text-white text-3xl bg-transparent">&times;</button>
+        <img :src="fullscreenSrc" alt="fullscreen" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+    </div>
 
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -116,11 +125,11 @@
                     
                     <p class="text-gray-500 mt-2"></p>
                     <div class="lg:col-span-2 group relative overflow-hidden rounded-3xl shadow-soft cursor-pointer">
-                        <img src="assets/flyer.jpg" alt="flyer" class="max-h-80 w-auto md:w-full object-contain object-center">
-                <div class="absolute inset-0 bg-black bg-opacity-20 transition-opacity opacity-0 group-hover:opacity-100 flex items-center justify-center">
-                    <span class="text-white font-semibold">SPMB</span>
-                </div>
-                </div>
+                        <img src="assets/flyer.jpg" alt="flyer" @click="fullscreenSrc = 'assets/flyer.jpg'" class="max-h-80 w-auto md:w-full object-contain object-center cursor-pointer">
+                        <div class="absolute inset-0 bg-black bg-opacity-20 transition-opacity opacity-0 group-hover:opacity-100 flex items-center justify-center">
+                            <span class="text-white font-semibold">SPMB</span>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
